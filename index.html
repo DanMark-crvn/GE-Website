@@ -62,11 +62,11 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1">Home</a>
+                                <a class="nav-link click-scroll" href="#section_1" id="home">Home</a>
                             </li>
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_2">About</a>
+                                <a class="nav-link click-scroll" href="#section_2" id="product">Product</a>
                             </li>
     
                             <li class="nav-item">
@@ -92,6 +92,8 @@
             </nav>
             
             <div class="home-section" id="home-sections"></div>
+            <div class="product-section" id="product-sections"></div>
+
 
 
             <!-- <section class="contact-section section-padding" id="section_6">
@@ -260,6 +262,40 @@
               .then(html => {
                 document.getElementById('home-sections').innerHTML = html;
               });
+
+
+            // Load home.html content into the placeholder div
+            fetch('product.html')
+              .then(response => response.text())
+              .then(html => {
+                document.getElementById('product-sections').innerHTML = html;
+              });
+
+            // Show product section only when Product nav is clicked
+            document.addEventListener('DOMContentLoaded', function() {
+                const productLink = document.getElementById('home');
+                const productSection = document.getElementById('home-sections');
+                const homeSection = document.getElementById('product-sections');
+                productLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    productSection.style.display = 'block';
+                    homeSection.style.display = 'none'; // Hide product section
+                    productSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Show product section only when Product nav is clicked
+            document.addEventListener('DOMContentLoaded', function() {
+                const productLink = document.getElementById('product');
+                const productSection = document.getElementById('product-sections');
+                const homeSection = document.getElementById('home-sections');
+                productLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    productSection.style.display = 'block';
+                    homeSection.style.display = 'none'; // Hide home section
+                    productSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
         </script>
     </body>
 </html>

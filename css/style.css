@@ -6,6 +6,17 @@
 .invert-logo{
   filter: invert(1) brightness(2);
 }
+.bg-orange {
+  background-color: #EE5007;
+}
+/* Hide product section by default */
+  #product-sections {
+    display: none;
+  }
+  .prod-buttons:hover{
+    color: #000;
+    background-color: var(--ge-logo-yellow);
+  }
 
 /* Vanguard Font */
   @font-face {
@@ -650,7 +661,14 @@ strong {
   min-height: 100vh;
 }
 
-
+.prod-right-wrapper{
+  /* background-image: url('../imgs/Original/HomeWrapper2.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+}
 /*---------------------------------------
   Section 4 - HOMEWRAPPER2              
 -----------------------------------------*/
