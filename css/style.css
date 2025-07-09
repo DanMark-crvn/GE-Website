@@ -110,6 +110,10 @@ body {
   font-family: var(--body-font-family); 
 }
 
+.sectionBg-black{
+  background-color: var(--dark-color);
+}
+
 
 /*---------------------------------------
   TYPOGRAPHY               
@@ -126,6 +130,24 @@ body {
 .text-justify {
   text-align: justify;
 }
+
+.gradient-text {
+  font-weight: bold;
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* font-size: 10rem; */
+}
+
+.team-image {
+  border: 10px solid transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728);
+  box-shadow: 0 0 15px rgba(191, 149, 63, 0.7);
+  display: inline-block;
+}
+
+
 h2,
 h3,
 h4,

@@ -257,6 +257,14 @@
         <script src="js/custom.js"></script>
 
         <script>
+            // Load Index.html
+            document.addEventListener('DOMContentLoaded', function() {
+                // Show home section, hide others on page load/refresh
+                document.getElementById('home-sections').style.display = 'block';
+                document.getElementById('product-sections').style.display = 'none';
+                document.getElementById('about-sections').style.display = 'none';
+            });
+            
             // Load home.html content into the placeholder div
             fetch('home.html')
               .then(response => response.text())
