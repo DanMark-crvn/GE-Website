@@ -70,7 +70,7 @@
                             </li>
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_3">Artists</a>
+                                <a class="nav-link click-scroll" href="#section_3" id="about">About</a>
                             </li>
 
                             <li class="nav-item">
@@ -93,6 +93,7 @@
             
             <div class="home-section" id="home-sections"></div>
             <div class="product-section" id="product-sections"></div>
+            <div class="about-section" id="about-sections"></div>
 
 
 
@@ -264,36 +265,62 @@
               });
 
 
-            // Load home.html content into the placeholder div
+            // Load product.html content into the placeholder div
             fetch('product.html')
               .then(response => response.text())
               .then(html => {
                 document.getElementById('product-sections').innerHTML = html;
               });
 
-            // Show product section only when Product nav is clicked
+            // Load about.html content into the placeholder div
+            fetch('about.html')
+              .then(response => response.text())
+              .then(html => {
+                document.getElementById('about-sections').innerHTML = html;
+              });
+
+            // Show home section only when Home nav is clicked
             document.addEventListener('DOMContentLoaded', function() {
-                const productLink = document.getElementById('home');
-                const productSection = document.getElementById('home-sections');
-                const homeSection = document.getElementById('product-sections');
-                productLink.addEventListener('click', function(e) {
+                const links = document.getElementById('home');
+                const divSection = document.getElementById('home-sections');
+                const productHideSection = document.getElementById('product-sections');
+                const aboutHideSection = document.getElementById('about-sections');
+                links.addEventListener('click', function(e) {
                     e.preventDefault();
-                    productSection.style.display = 'block';
-                    homeSection.style.display = 'none'; // Hide product section
-                    productSection.scrollIntoView({ behavior: 'smooth' });
+                    divSection.style.display = 'block';
+                    productHideSection.style.display = 'none'; // Hide product section
+                    aboutHideSection.style.display = 'none'; // Hide about section
+                    divSection.scrollIntoView({ behavior: 'smooth' });
                 });
             });
 
             // Show product section only when Product nav is clicked
             document.addEventListener('DOMContentLoaded', function() {
-                const productLink = document.getElementById('product');
-                const productSection = document.getElementById('product-sections');
-                const homeSection = document.getElementById('home-sections');
-                productLink.addEventListener('click', function(e) {
+                const links = document.getElementById('product');
+                const divSection = document.getElementById('product-sections');
+                const homeHideSection = document.getElementById('home-sections');
+                const aboutHideSection = document.getElementById('about-sections');
+                links.addEventListener('click', function(e) {
                     e.preventDefault();
-                    productSection.style.display = 'block';
-                    homeSection.style.display = 'none'; // Hide home section
-                    productSection.scrollIntoView({ behavior: 'smooth' });
+                    divSection.style.display = 'block';
+                    homeHideSection.style.display = 'none'; // Hide home section
+                    aboutHideSection.style.display = 'none'; // Hide about section
+                    divSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Show about section only when About nav is clicked
+            document.addEventListener('DOMContentLoaded', function() {
+                const links = document.getElementById('about');
+                const divSection = document.getElementById('about-sections');
+                const homeHideSection = document.getElementById('home-sections');
+                const productHideSection = document.getElementById('product-sections');
+                links.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    divSection.style.display = 'block';
+                    homeHideSection.style.display = 'none'; // Hide home section
+                    productHideSection.style.display = 'none'; // Hide product section
+                    divSection.scrollIntoView({ behavior: 'smooth' });
                 });
             });
         </script>
