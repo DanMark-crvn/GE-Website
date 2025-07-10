@@ -74,7 +74,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_4">Schedule</a>
+                                <a class="nav-link click-scroll" href="#section_4" id="reseller">Reseller</a>
                             </li>
 
                             <li class="nav-item">
@@ -94,6 +94,7 @@
             <div class="home-section" id="home-sections"></div>
             <div class="product-section" id="product-sections"></div>
             <div class="about-section" id="about-sections"></div>
+            <div class="reseller-section" id="reseller-sections"></div>
 
 
 
@@ -263,6 +264,7 @@
                 document.getElementById('home-sections').style.display = 'block';
                 document.getElementById('product-sections').style.display = 'none';
                 document.getElementById('about-sections').style.display = 'none';
+                document.getElementById('reseller-sections').style.display = 'none';
             });
             
             // Load home.html content into the placeholder div
@@ -287,17 +289,26 @@
                 document.getElementById('about-sections').innerHTML = html;
               });
 
+            // Load reseller.html content into the placeholder div
+            fetch('reseller.html')
+              .then(response => response.text())
+              .then(html => {
+                document.getElementById('reseller-sections').innerHTML = html;
+              });
+
             // Show home section only when Home nav is clicked
             document.addEventListener('DOMContentLoaded', function() {
                 const links = document.getElementById('home');
                 const divSection = document.getElementById('home-sections');
                 const productHideSection = document.getElementById('product-sections');
                 const aboutHideSection = document.getElementById('about-sections');
+                const resellerHideSection = document.getElementById('reseller-sections');
                 links.addEventListener('click', function(e) {
                     e.preventDefault();
                     divSection.style.display = 'block';
                     productHideSection.style.display = 'none'; // Hide product section
                     aboutHideSection.style.display = 'none'; // Hide about section
+                    resellerHideSection.style.display = 'none'; // Hide reseller section
                     divSection.scrollIntoView({ behavior: 'smooth' });
                 });
             });
@@ -308,11 +319,13 @@
                 const divSection = document.getElementById('product-sections');
                 const homeHideSection = document.getElementById('home-sections');
                 const aboutHideSection = document.getElementById('about-sections');
+                const resellerHideSection = document.getElementById('reseller-sections');
                 links.addEventListener('click', function(e) {
                     e.preventDefault();
                     divSection.style.display = 'block';
                     homeHideSection.style.display = 'none'; // Hide home section
                     aboutHideSection.style.display = 'none'; // Hide about section
+                    resellerHideSection.style.display = 'none'; // Hide reseller section
                     divSection.scrollIntoView({ behavior: 'smooth' });
                 });
             });
@@ -323,11 +336,30 @@
                 const divSection = document.getElementById('about-sections');
                 const homeHideSection = document.getElementById('home-sections');
                 const productHideSection = document.getElementById('product-sections');
+                const resellerHideSection = document.getElementById('reseller-sections');
                 links.addEventListener('click', function(e) {
                     e.preventDefault();
                     divSection.style.display = 'block';
                     homeHideSection.style.display = 'none'; // Hide home section
                     productHideSection.style.display = 'none'; // Hide product section
+                    resellerHideSection.style.display = 'none'; // Hide reseller section
+                    divSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Show reseller section only when Reseller nav is clicked
+            document.addEventListener('DOMContentLoaded', function() {
+                const links = document.getElementById('reseller');
+                const divSection = document.getElementById('reseller-sections');
+                const homeHideSection = document.getElementById('home-sections');
+                const productHideSection = document.getElementById('product-sections');
+                const aboutHideSection = document.getElementById('about-sections');
+                links.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    divSection.style.display = 'block';
+                    homeHideSection.style.display = 'none'; // Hide home section
+                    productHideSection.style.display = 'none'; // Hide product section
+                    aboutHideSection.style.display = 'none'; // Hide reseller section
                     divSection.scrollIntoView({ behavior: 'smooth' });
                 });
             });

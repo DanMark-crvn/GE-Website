@@ -13,9 +13,20 @@
   #product-sections {
     display: none;
   }
+  
+  .yellow-buttons:hover{
+    background-color: var(--ge-logo-black) !important; /* Bootstrap dark */
+    border-color: var(--ge-logo-black) !important;
+    color: #fff !important;
+  }
   .prod-buttons:hover{
     color: #000;
     background-color: var(--ge-logo-yellow);
+  }
+
+  .form-control:focus {
+    border-color: var(--ge-logo-yellow);
+    box-shadow: 0 0 0 0.25rem rgba(191, 149, 63, 0.25);
   }
 
 /* Vanguard Font */
@@ -136,7 +147,20 @@ body {
   background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* font-size: 10rem; */
+  font-size: 6rem;
+}
+/* Responsive font size for tablets */
+@media (max-width: 991px) {
+  .gradient-text {
+    font-size: 3.5rem;
+  }
+}
+
+/* Responsive font size for phones */
+@media (max-width: 480px) {
+  .gradient-text {
+    font-size: 2.2rem;
+  }
 }
 
 .team-image {
@@ -693,6 +717,14 @@ strong {
 }
 .prod-right-wrapper{
   /* background-image: url('../imgs/Original/HomeWrapper2.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 100vh;
+}
+.wrapperReseller{
+  background-image: url('../imgs/Original/ResellerPic.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

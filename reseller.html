@@ -1,0 +1,135 @@
+<section class="hero-section" id="section_1">
+    <div class="section-overlay"></div>
+
+    <div class="video-wrap">
+        <img src="imgs/Original/Banner.png" alt="GE-Banner" class="custom-video">
+    </div>
+</section>
+
+
+<section class="wrapperReseller section-padding" id="section_3">
+    
+</section>
+
+
+<section class="section-padding" id="section_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12 d-flex justify-content-center align-items-center">
+                <div class="info-text-wrap">
+                    <img src="imgs/Original/GEArt 9.png" class="info-image img-fluid" width="500">
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
+                <div class="col-12 text-lg-start">                    
+                    <div class="container my-5">
+                        <form method="POST" class="" action="https://formspree.io/f/xwpbjpgj">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-12 col-md-10 bg-white p-4 rounded shadow">
+                                    
+                                    <!-- Name -->
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="name" 
+                                            name="name" 
+                                            placeholder="Enter your name" 
+                                            required>
+                                        <div class="invalid-feedback text-danger">
+                                            Please enter your name.
+                                        </div>
+                                    </div>
+
+                                    <!-- Address -->
+                                    <div class="mb-3">
+                                        <label for="address" class="form-label">Address</label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="address" 
+                                            name="address" 
+                                            placeholder="Enter your address" 
+                                            pattern="^[a-zA-ZñÑ0-9\s,.#\-]+$" 
+                                            required>
+                                        <div class="invalid-feedback text-danger">
+                                            Please enter a valid address.
+                                        </div>
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input 
+                                            type="email" 
+                                            class="form-control" 
+                                            id="email" 
+                                            name="email" 
+                                            placeholder="Enter your email address" 
+                                            required>
+                                        <div class="invalid-feedback text-danger">
+                                            Please enter a valid email address.
+                                        </div>
+                                    </div>
+
+                                    <!-- Phone -->
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input 
+                                            type="tel" 
+                                            class="form-control" 
+                                            id="phone" 
+                                            name="phone" 
+                                            placeholder="Enter your phone number" 
+                                            pattern="[0-9]{10,15}" 
+                                            required>
+                                        <div class="invalid-feedback text-danger">
+                                            Please enter a valid phone number (10–15 digits).
+                                        </div>
+                                    </div>
+
+                                    <!-- Message -->
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Message/Inquiry</label>
+                                        <textarea 
+                                            class="form-control" 
+                                            id="message" 
+                                            name="message" 
+                                            placeholder="Write your message or inquiry" 
+                                            rows="5" 
+                                            required></textarea>
+                                        <div class="invalid-feedback text-danger">
+                                            Please enter a message or inquiry.
+                                        </div>
+                                    </div>
+
+                                    <!-- Submit Button -->
+                                    <button type="submit" class="btn btn-warning w-100 text-white yellow-buttons">
+                                        Submit
+                                    </button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    });
+  });
+</script>
