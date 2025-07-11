@@ -82,7 +82,7 @@
                             </li>
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                                <a class="nav-link click-scroll" href="#section_6" id="contact">Contact</a>
                             </li>
                         </ul>
 
@@ -95,6 +95,7 @@
             <div class="product-section" id="product-sections"></div>
             <div class="about-section" id="about-sections"></div>
             <div class="reseller-section" id="reseller-sections"></div>
+            <div class="contact-section" id="contact-sections"></div>
 
 
 
@@ -265,6 +266,7 @@
                 document.getElementById('product-sections').style.display = 'none';
                 document.getElementById('about-sections').style.display = 'none';
                 document.getElementById('reseller-sections').style.display = 'none';
+                document.getElementById('contact-sections').style.display = 'none';
             });
             
             // Load home.html content into the placeholder div
@@ -296,6 +298,14 @@
                 document.getElementById('reseller-sections').innerHTML = html;
               });
 
+            // Load reseller.html content into the placeholder div
+            fetch('contact.html')
+              .then(response => response.text())
+              .then(html => {
+                document.getElementById('contact-sections').innerHTML = html;
+              });
+
+
             // Show home section only when Home nav is clicked
             document.addEventListener('DOMContentLoaded', function() {
                 const links = document.getElementById('home');
@@ -303,12 +313,14 @@
                 const productHideSection = document.getElementById('product-sections');
                 const aboutHideSection = document.getElementById('about-sections');
                 const resellerHideSection = document.getElementById('reseller-sections');
+                const contactHideSection = document.getElementById('contact-sections');
                 links.addEventListener('click', function(e) {
                     e.preventDefault();
                     divSection.style.display = 'block';
                     productHideSection.style.display = 'none'; // Hide product section
                     aboutHideSection.style.display = 'none'; // Hide about section
                     resellerHideSection.style.display = 'none'; // Hide reseller section
+                    contactHideSection.style.display = 'none'; // Hide contact section
                     divSection.scrollIntoView({ behavior: 'smooth' });
                 });
             });
@@ -320,12 +332,14 @@
                 const homeHideSection = document.getElementById('home-sections');
                 const aboutHideSection = document.getElementById('about-sections');
                 const resellerHideSection = document.getElementById('reseller-sections');
+                const contactHideSection = document.getElementById('contact-sections');
                 links.addEventListener('click', function(e) {
                     e.preventDefault();
                     divSection.style.display = 'block';
                     homeHideSection.style.display = 'none'; // Hide home section
                     aboutHideSection.style.display = 'none'; // Hide about section
                     resellerHideSection.style.display = 'none'; // Hide reseller section
+                    contactHideSection.style.display = 'none'; // Hide contact section
                     divSection.scrollIntoView({ behavior: 'smooth' });
                 });
             });
@@ -337,12 +351,14 @@
                 const homeHideSection = document.getElementById('home-sections');
                 const productHideSection = document.getElementById('product-sections');
                 const resellerHideSection = document.getElementById('reseller-sections');
+                const contactHideSection = document.getElementById('contact-sections');
                 links.addEventListener('click', function(e) {
                     e.preventDefault();
                     divSection.style.display = 'block';
                     homeHideSection.style.display = 'none'; // Hide home section
                     productHideSection.style.display = 'none'; // Hide product section
                     resellerHideSection.style.display = 'none'; // Hide reseller section
+                    contactHideSection.style.display = 'none'; // Hide contact section
                     divSection.scrollIntoView({ behavior: 'smooth' });
                 });
             });
@@ -354,12 +370,34 @@
                 const homeHideSection = document.getElementById('home-sections');
                 const productHideSection = document.getElementById('product-sections');
                 const aboutHideSection = document.getElementById('about-sections');
+                const contactHideSection = document.getElementById('contact-sections');
                 links.addEventListener('click', function(e) {
                     e.preventDefault();
                     divSection.style.display = 'block';
                     homeHideSection.style.display = 'none'; // Hide home section
                     productHideSection.style.display = 'none'; // Hide product section
-                    aboutHideSection.style.display = 'none'; // Hide reseller section
+                    aboutHideSection.style.display = 'none'; // Hide about section
+                    contactHideSection.style.display = 'none'; // Hide contact section
+                    divSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+
+            // Show contact section only when Contact nav is clicked
+            document.addEventListener('DOMContentLoaded', function() {
+                const links = document.getElementById('contact');
+                const divSection = document.getElementById('contact-sections');
+                const homeHideSection = document.getElementById('home-sections');
+                const productHideSection = document.getElementById('product-sections');
+                const aboutHideSection = document.getElementById('about-sections');
+                const resellerHideSection = document.getElementById('reseller-sections');
+                links.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    divSection.style.display = 'block';
+                    homeHideSection.style.display = 'none'; // Hide home section
+                    productHideSection.style.display = 'none'; // Hide product section
+                    aboutHideSection.style.display = 'none'; // Hide about section
+                    resellerHideSection.style.display = 'none'; // Hide reseller section
                     divSection.scrollIntoView({ behavior: 'smooth' });
                 });
             });

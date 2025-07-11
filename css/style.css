@@ -751,6 +751,15 @@ strong {
   border-radius: var(--border-radius-medium);
 }
 
+.contactus-section {
+  background-image: url('../imgs/GEWrapper.png');
+  background-color: #704010;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right; /* Adjust position here */
+  position: relative;
+  overflow: hidden; 
+}
 
 /*---------------------------------------
   CUSTOM FORM               
