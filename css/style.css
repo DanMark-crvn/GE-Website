@@ -462,6 +462,14 @@ strong {
   width: 100%;
   height: 100%;
 }
+.custom-reseller-banner{
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
 
 /*---------------------------------------
@@ -597,6 +605,10 @@ strong {
   overflow: hidden;
   padding-top: 100px;
   height: calc(100vh - 51px);
+}
+
+.hero-section .resellerBg{
+  background-color: #0a0203 !important;
 }
 
 .hero-section small {

@@ -52,8 +52,6 @@
                             <img src="imgs/GE_S FINAL BRANDING (1)-07.png" alt="GE-Branding" class="logo-image img-fluid invert-logo" width="150" height="150">
                         </div>
                     </a>
-
-                    <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
     
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -62,31 +60,25 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1" id="home">Home</a>
+                                <a class="nav-link click-scroll" href="#home-sections" id="home">Home</a>
                             </li>
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_2" id="product">Product</a>
+                                <a class="nav-link click-scroll" href="#product-sections" id="product">Product</a>
                             </li>
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_3" id="about">About</a>
+                                <a class="nav-link click-scroll" href="#about-sections" id="about">About</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_4" id="reseller">Reseller</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_5">Pricing</a>
+                                <a class="nav-link click-scroll" href="#reseller-sections" id="reseller">Reseller</a>
                             </li>
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_6" id="contact">Contact</a>
+                                <a class="nav-link click-scroll" href="#contact-sections" id="contact">Contact</a>
                             </li>
                         </ul>
-
-                        <a href="ticket.html" class="btn custom-btn d-lg-block d-none">Buy Ticket</a>
                     </div>
                 </div>
             </nav>
@@ -257,150 +249,8 @@
         <script src="js/jquery.sticky.js"></script>
         <script src="js/click-scroll.js"></script>
         <script src="js/custom.js"></script>
-
-        <script>
-            // Load Index.html
-            document.addEventListener('DOMContentLoaded', function() {
-                // Show home section, hide others on page load/refresh
-                document.getElementById('home-sections').style.display = 'block';
-                document.getElementById('product-sections').style.display = 'none';
-                document.getElementById('about-sections').style.display = 'none';
-                document.getElementById('reseller-sections').style.display = 'none';
-                document.getElementById('contact-sections').style.display = 'none';
-            });
-            
-            // Load home.html content into the placeholder div
-            fetch('home.html')
-              .then(response => response.text())
-              .then(html => {
-                document.getElementById('home-sections').innerHTML = html;
-              });
-
-
-            // Load product.html content into the placeholder div
-            fetch('product.html')
-              .then(response => response.text())
-              .then(html => {
-                document.getElementById('product-sections').innerHTML = html;
-              });
-
-            // Load about.html content into the placeholder div
-            fetch('about.html')
-              .then(response => response.text())
-              .then(html => {
-                document.getElementById('about-sections').innerHTML = html;
-              });
-
-            // Load reseller.html content into the placeholder div
-            fetch('reseller.html')
-              .then(response => response.text())
-              .then(html => {
-                document.getElementById('reseller-sections').innerHTML = html;
-              });
-
-            // Load reseller.html content into the placeholder div
-            fetch('contact.html')
-              .then(response => response.text())
-              .then(html => {
-                document.getElementById('contact-sections').innerHTML = html;
-              });
-
-
-            // Show home section only when Home nav is clicked
-            document.addEventListener('DOMContentLoaded', function() {
-                const links = document.getElementById('home');
-                const divSection = document.getElementById('home-sections');
-                const productHideSection = document.getElementById('product-sections');
-                const aboutHideSection = document.getElementById('about-sections');
-                const resellerHideSection = document.getElementById('reseller-sections');
-                const contactHideSection = document.getElementById('contact-sections');
-                links.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    divSection.style.display = 'block';
-                    productHideSection.style.display = 'none'; // Hide product section
-                    aboutHideSection.style.display = 'none'; // Hide about section
-                    resellerHideSection.style.display = 'none'; // Hide reseller section
-                    contactHideSection.style.display = 'none'; // Hide contact section
-                    divSection.scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-
-            // Show product section only when Product nav is clicked
-            document.addEventListener('DOMContentLoaded', function() {
-                const links = document.getElementById('product');
-                const divSection = document.getElementById('product-sections');
-                const homeHideSection = document.getElementById('home-sections');
-                const aboutHideSection = document.getElementById('about-sections');
-                const resellerHideSection = document.getElementById('reseller-sections');
-                const contactHideSection = document.getElementById('contact-sections');
-                links.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    divSection.style.display = 'block';
-                    homeHideSection.style.display = 'none'; // Hide home section
-                    aboutHideSection.style.display = 'none'; // Hide about section
-                    resellerHideSection.style.display = 'none'; // Hide reseller section
-                    contactHideSection.style.display = 'none'; // Hide contact section
-                    divSection.scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-
-            // Show about section only when About nav is clicked
-            document.addEventListener('DOMContentLoaded', function() {
-                const links = document.getElementById('about');
-                const divSection = document.getElementById('about-sections');
-                const homeHideSection = document.getElementById('home-sections');
-                const productHideSection = document.getElementById('product-sections');
-                const resellerHideSection = document.getElementById('reseller-sections');
-                const contactHideSection = document.getElementById('contact-sections');
-                links.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    divSection.style.display = 'block';
-                    homeHideSection.style.display = 'none'; // Hide home section
-                    productHideSection.style.display = 'none'; // Hide product section
-                    resellerHideSection.style.display = 'none'; // Hide reseller section
-                    contactHideSection.style.display = 'none'; // Hide contact section
-                    divSection.scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-
-            // Show reseller section only when Reseller nav is clicked
-            document.addEventListener('DOMContentLoaded', function() {
-                const links = document.getElementById('reseller');
-                const divSection = document.getElementById('reseller-sections');
-                const homeHideSection = document.getElementById('home-sections');
-                const productHideSection = document.getElementById('product-sections');
-                const aboutHideSection = document.getElementById('about-sections');
-                const contactHideSection = document.getElementById('contact-sections');
-                links.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    divSection.style.display = 'block';
-                    homeHideSection.style.display = 'none'; // Hide home section
-                    productHideSection.style.display = 'none'; // Hide product section
-                    aboutHideSection.style.display = 'none'; // Hide about section
-                    contactHideSection.style.display = 'none'; // Hide contact section
-                    divSection.scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-
-
-            // Show contact section only when Contact nav is clicked
-            document.addEventListener('DOMContentLoaded', function() {
-                const links = document.getElementById('contact');
-                const divSection = document.getElementById('contact-sections');
-                const homeHideSection = document.getElementById('home-sections');
-                const productHideSection = document.getElementById('product-sections');
-                const aboutHideSection = document.getElementById('about-sections');
-                const resellerHideSection = document.getElementById('reseller-sections');
-                links.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    divSection.style.display = 'block';
-                    homeHideSection.style.display = 'none'; // Hide home section
-                    productHideSection.style.display = 'none'; // Hide product section
-                    aboutHideSection.style.display = 'none'; // Hide about section
-                    resellerHideSection.style.display = 'none'; // Hide reseller section
-                    divSection.scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-        </script>
+        
+        <!-- This where the rendering comes from -->
+        <script src="js/render.js"></script>
     </body>
 </html>
