@@ -670,7 +670,7 @@ strong {
 /* Extra small devices (optional) */
 @media (max-width: 480px) {
   .hero-section-reseller {
-    min-height: 45vh;
+    min-height: 31vh;
   }
 }
 

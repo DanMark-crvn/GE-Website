@@ -31,6 +31,44 @@ fetch('about.html')
     document.getElementById('about-sections').innerHTML = html;
     });
 
+window.goToReseller = function () {
+  // Hide other sections
+  document.getElementById('home-sections').style.display = 'none';
+  document.getElementById('product-sections').style.display = 'none';
+  document.getElementById('about-sections').style.display = 'none';
+  document.getElementById('contact-sections').style.display = 'none';
+
+  const resellerSection = document.getElementById('reseller-sections');
+
+  // Fetch reseller.html only if it's not already loaded
+  if (!resellerSection.innerHTML.trim()) {
+    fetch('reseller.html')
+      .then(response => response.text())
+      .then(html => {
+        resellerSection.innerHTML = html;
+        resellerSection.style.display = 'block';
+
+        setTimeout(() => {
+          resellerSection.scrollIntoView({ behavior: 'smooth' });
+          // Highlight Reseller nav link
+          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+          const resellerNav = document.getElementById('reseller');
+          if (resellerNav) resellerNav.classList.add('active');
+        }, 100);
+      });
+  } else {
+    resellerSection.style.display = 'block';
+    setTimeout(() => {
+      resellerSection.scrollIntoView({ behavior: 'smooth' });
+
+      //Highlight Reseller nav link
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+      const resellerNav = document.getElementById('reseller');
+      if (resellerNav) resellerNav.classList.add('active');
+    }, 100);
+  }
+};
+
 // Load reseller.html content into the placeholder div
 fetch('reseller.html')
     .then(response => response.text())
