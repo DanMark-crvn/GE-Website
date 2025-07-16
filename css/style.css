@@ -503,8 +503,9 @@ strong {
   top: 0;
   left: 0;
   object-fit: cover;
-  width: 100%;
-  height: 100%;
+  margin-top: 130px;
+  /* width: 100%;
+  height: 100%; */
 }
 
 
@@ -512,7 +513,8 @@ strong {
   SITE HEADER              
 -----------------------------------------*/
 .site-header {
-  background-color: var(--ge-logo-black);
+  /* background-color: var(--ge-logo-black); */
+  background-color: var(--ge-logo-yellow);
   padding-top: 12px;
   padding-bottom: 12px;
 }
@@ -526,7 +528,7 @@ strong {
   top: 0;
   right: 0;
   left: 0;
-  margin-top: 51px;
+  /* margin-top: 51px; */
 }
 
 .sticky-wrapper.is-sticky .navbar {
@@ -535,7 +537,7 @@ strong {
 
 .navbar {
   background: transparent;
-  z-index: 9;
+  z-index: 101;
 }
 
 .navbar-brand,
@@ -642,6 +644,36 @@ strong {
   padding-top: 100px;
   height: calc(100vh - 51px);
 }
+.hero-section-reseller{
+  display: flex;
+  background-color: var(--ge-logo-black);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 75vh;
+}
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero-section-reseller {
+    min-height: 43vh;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .hero-section-reseller {
+    min-height: 30vh;
+  }
+}
+
+/* Extra small devices (optional) */
+@media (max-width: 480px) {
+  .hero-section-reseller {
+    min-height: 45vh;
+  }
+}
+
 
 .hero-section .resellerBg{
   background-color: #0a0203 !important;
